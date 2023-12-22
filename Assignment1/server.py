@@ -223,8 +223,9 @@ class Server(Socket):
         self.outgoing_packet = packet.get_packet()
         self.outgoing_address = addr
         print(len(self.outgoing_packet))
-        self.main_socket.sendall("Hello, World!".encode("utf-8"))
+        conn.sendall("Hello, World!".encode("utf-8"))
         print("Message Sent!")
+        conn.close()
         self.main_socket.close()
         return
     
